@@ -40,7 +40,6 @@ public class Application {
             log.info( quote.toString() );
         };
     }
-
     @RequestMapping(value = "/fetch")
     public String runUrl() {
 
