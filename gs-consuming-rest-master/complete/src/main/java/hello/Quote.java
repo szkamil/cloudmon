@@ -1,7 +1,6 @@
 package hello;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.context.annotation.Bean;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Quote {
@@ -16,6 +15,8 @@ public class Quote {
     }
 
     public void setType(String type) {
+        type = MaskPiString.checkForPi( type );
+
         this.type = type;
     }
 
@@ -24,6 +25,7 @@ public class Quote {
     }
 
     public void setValue(Value value) {
+//        value = MaskPiAccount.checkForPi( value ) );
         this.value = value;
     }
 

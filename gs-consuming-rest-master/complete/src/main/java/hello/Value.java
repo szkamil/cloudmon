@@ -24,6 +24,8 @@ public class Value {
     }
 
     public void setQuote(String quote) {
+        quote = MaskPiString.checkForPi( quote );
+
         this.quote = quote;
     }
 

@@ -40,13 +40,16 @@ public class Application {
             log.info( quote.toString() );
         };
     }
+
     @RequestMapping(value = "/fetch")
     public String runUrl() {
 
         RestTemplate restTemplate = new RestTemplate();
         Quote quote = restTemplate.getForObject( "https://gturnquist-quoters.cfapps.io/api/random", Quote.class );
         log.info( quote.toString() );
+        log.info( String.valueOf( System.currentTimeMillis() ) );
         return quote.toString();
+
 
     }
 }
